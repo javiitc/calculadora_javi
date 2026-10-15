@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginStart="56dp"
-        android:text="Peso (kg)"
+        android:text="Peso"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/titulo"
@@ -36,7 +36,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:hint="0"
+        android:hint="Tu peso"
         android:inputType="numberDecimal"
         android:textSize="22sp"
         app:layout_constraintBaseline_toBaselineOf="@id/peso"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Altura (cm)"
+        android:text="Altura"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/peso"
@@ -57,21 +57,47 @@
         android:id="@+id/introducirAltura"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:hint="0"
+        android:hint="Tu altura"
         android:inputType="numberDecimal"
         android:textSize="22sp"
         app:layout_constraintBaseline_toBaselineOf="@id/altura"
         app:layout_constraintStart_toStartOf="@id/introducirPeso" />
 
+    <RadioGroup
+        android:id="@+id/rgUnidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/rbMetrico"
+        app:layout_constraintTop_toBottomOf="@id/introducirAltura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbEspanol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S. ESPAÑOL (kg, cm)" />
+
+        <RadioButton
+            android:id="@+id/rbInglés"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="S. Inglés (lb, in)" />
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/calcular"
         android:layout_width="140dp"
         android:layout_height="70dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:text="Calcular"
         android:textSize="18sp"
         app:backgroundTint="#FF294573"
-        app:layout_constraintTop_toBottomOf="@id/introducirAltura"
+        app:layout_constraintTop_toBottomOf="@id/rgUnidades"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
